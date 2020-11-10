@@ -1,0 +1,32 @@
+body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.main{
+    display: flex;
+    height : 400px;
+    flex-direction: row;
+    justify-content: center;
+}
+.main nav{
+    flex-grow: 1.5;
+    order: -1;
+}
+.main article{
+    flex-grow: 3;
+    order: 0;
+}
+.main aside{
+    flex-grow: 1.5;
+    order: 1;
+}
+
+header,footer{
+    height: 100px;
+    background-color: green;
+}
+
+nav,aside{
+    background-color: rgb(207, 197, 197);
+}
