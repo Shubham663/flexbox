@@ -33,6 +33,12 @@ label,input,button{
     margin-bottom: 20px;
 }
 
+@media all and (max-width: 980px){
+    .headerContainer{
+        background: blue;
+    }
+}
+
 
 label{
     text-align: right;
