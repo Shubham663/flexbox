@@ -15,6 +15,7 @@
             <div>
                 <label for="pwd">password input type</label>
                 <input id="pwd" name="pwd" type="password">
+                <error-output for="pwd" class="pwd-error"></error-output>
             </div>
             <div>
                 <label for="mail">email input type</label>
@@ -31,6 +32,7 @@
             <div>
                 <label for="tel">tel input type</label>
                 <input id="tel" name="tel" type="tel">
+                <error-output for="tel" class= "tel-error"></error-output>
             </div>
             <div>
                 <label for="search">search input type</label>
@@ -60,11 +62,29 @@
                 else textError.textContent = "Name is incorrect"
             });
 
+            const password = document.querySelector('#pwd');
+            const passwordError = document.querySelector('.pwd-error');
+            password.addEventListener('input',function(){
+                let passwordRegex = RegExp('^(?=.*\\d)(?=.*[A-Z])(?=.*\\W)(?!.*\\W\\w*\\W)(?!.*\\s).{8,}$');
+                if(passwordRegex.test(password.value))
+                    passwordError.textContent = "";
+                else passwordError.textContent = "password format is incorrect"
+            });
+
             const salary = document.querySelector('#salary');
             const ouput = document.querySelector('.salary-output');
             ouput.textContent = salary.value;
             salary.addEventListener('input',function(){
                 ouput.textContent = salary.value;
+            });
+
+            const tel = document.querySelector('#tel');
+            const telError = document.querySelector('.tel-error');
+            tel.addEventListener('input',function(){
+                let numberRegex = RegExp('[1-9]{2}\\s[1-9]{1}[0-9]{9}');
+                if(numberRegex.test(tel.value))
+                    telError.textContent = "";
+                else telError.textContent = "Number is incorrect"
             });
         </script>
     </body>
